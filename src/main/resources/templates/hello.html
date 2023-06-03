@@ -2,9 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hello</title>
 </head>
 <body>
-<p th:text="'Hello ' + ${person.getUserName}"></p>
+
+<div th:if="${person.getUserName() != null}">
+    <p th:text="'Hello ' + ${person.getUserName()}"></p>
+    <form th:method="GET" th:action="@{/logout}">
+        <input type="submit" value="Выйти">
+    </form>
+</div>
+
+<div th:unless="${person.getUserName() != null}">
+    <p>Hello anonymous</p>
+
+    <form th:method="GET" th:action="@{/auth/login}">
+        <input type="submit" value="Войти">
+    </form>
+    <br/>
+    <form th:method="GET" th:action="@{/auth/registration}">
+        <input type="submit" value="Зарегестрироваться">
+    </form>
+</div>
+<br/>
+
 </body>
 </html>

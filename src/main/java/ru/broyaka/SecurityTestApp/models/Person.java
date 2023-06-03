@@ -1,15 +1,18 @@
 package ru.broyaka.SecurityTestApp.models;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "test1")
-@Data
 public class Person {
     @Id
     @Column(name = "id")
