@@ -8,7 +8,7 @@
 
 <div th:if="${person.getUserName() != null}">
     <p th:text="'Hello ' + ${person.getUserName()}"></p>
-    <form th:method="GET" th:action="@{/logout}">
+    <form th:method="POST" th:action="@{/logout}">
         <input type="submit" value="Выйти">
     </form>
 </div>
